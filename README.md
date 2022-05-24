@@ -49,11 +49,25 @@ You can download pre-trained models for Zeroth-Korean, ClovaCall, KSponSpeech an
 ## 3. Decoding
 Inference is simple. For example, to recognize utterances listed in *evalset/zeroth_korean/data/wav.scp* using the model, *mdl/zeroth_korean.zip*, pre-trained for Zeroth-Korean dataset with decoding options in *conf/decode_asr.yaml*, run the following command.
 
-```(ESPnet) python3 bin/asr_inference.py --mdl mdl/zeroth_korean.zip --wav_scp evalset/zeroth_korean/data/wav.scp --config conf/decode_asr.yaml --output_dir output/zeroth_korean```
+```
+python3 bin/asr_inference.py \
+--mdl mdl/zeroth_korean.zip \
+--wav_scp evalset/zeroth_korean/data/wav.scp \
+--config conf/decode_asr.yaml \
+--output_dir output/zeroth_korean \
+--ngpu 1
+```
 
 If it causes errors such as "ModuleNotFoundError: No module named 'espnet'", you must use python instead of python3 as follows:
 
-```(ESPnet) python bin/asr_inference.py --mdl mdl/zeroth_korean.zip --wav_scp evalset/zeroth_korean/data/wav.scp --config conf/decode_asr.yaml --output_dir output/zeroth_korean```
+```
+python bin/asr_inference.py \
+--mdl mdl/zeroth_korean.zip \
+--wav_scp evalset/zeroth_korean/data/wav.scp \
+--config conf/decode_asr.yaml \
+--output_dir output/zeroth_korean \
+--ngpu 1
+```
 
 You can check the recognition result.
 
@@ -67,17 +81,38 @@ You can check the recognition result.
 ## 4. Fast Decoding
 Recognition latency can be reduced by changing decoding options, but it can hurt recognition performance.
 
-```(ESPnet) python3 bin/asr_inference.py --mdl mdl/zeroth_korean.zip --wav_scp evalset/zeroth_korean/data/wav.scp --config conf/fast_decode_asr.yaml --output_dir output/zeroth_korean```
+```
+python3 bin/asr_inference.py \
+--mdl mdl/zeroth_korean.zip \
+--wav_scp evalset/zeroth_korean/data/wav.scp \
+--config conf/fast_decode_asr.yaml \
+--output_dir output/fast_zeroth_korean \
+--ngpu 1
+```
 
 ## 5. Other pre-trained models
 #### 5.1 KsponSpeech
 You can evaluate KsponSpeech samples by running the following commands.
 
-```(ESPnet) python3 bin/asr_inference.py --mdl mdl/ksponspeech.zip --wav_scp evalset/ksponspeech/data/wav.scp --config conf/decode_asr.yaml --output_dir output/ksponspeech```
+```
+python3 bin/asr_inference.py \
+--mdl mdl/ksponspeech.zip \
+--wav_scp evalset/ksponspeech/data/wav.scp \
+--config conf/decode_asr_ksponspeech.yaml \
+--output_dir output/ksponspeech \
+--ngpu 1 
+```
 
 You can use the conf/fast_decode_asr_ksponspeech.yaml for fast decoding.
 
-```(ESPnet) python3 bin/asr_inference.py --mdl mdl/ksponspeech.zip --wav_scp evalset/ksponspeech/data/wav.scp --config conf/fast_decode_asr_ksponspeech.yaml --output_dir output/fast_ksponspeech```
+```
+python3 bin/asr_inference.py \
+--mdl mdl/ksponspeech.zip \
+--wav_scp evalset/ksponspeech/data/wav.scp \
+--config conf/fast_decode_asr_ksponspeech.yaml \
+--output_dir output/fast_ksponspeech \
+--ngpu 1 
+```
 
 #### 5.2 ClovaCall
 Redistribution of ClovaCall dataset is prohibited. You can download the ClovaCall dataset from the [page](https://docs.google.com/forms/d/e/1FAIpQLSf5bm7FtWYeZf8C02mlyZCg32yMrA9_DgKU17oD0migPkEXog/viewform)
@@ -85,9 +120,25 @@ Redistribution of ClovaCall dataset is prohibited. You can download the ClovaCal
 #### 5.3 Librispeech
 You can evaluate Librispeech samples by running the following commands.
 
-```(ESPnet) python3 bin/asr_inference.py --mdl mdl/librispeech.zip --wav_scp evalset/librispeech/data/wav.scp --config conf/decode_asr.yaml --output_dir output/librispeech```
+```
+python3 bin/asr_inference.py \
+--mdl mdl/librispeech.zip \
+--wav_scp evalset/librispeech/data/wav.scp \
+--config conf/decode_asr.yaml \
+--output_dir output/librispeech \
+--ngpu 1
+```
+
 Or
-```(ESPnet) python3 bin/asr_inference.py --mdl mdl/librispeech.zip --wav_scp evalset/librispeech/data/wav.scp --config conf/fast_decode_asr.yaml --output_dir output/librispeech```
+
+```
+python3 bin/asr_inference.py \
+--mdl mdl/librispeech.zip \
+--wav_scp evalset/librispeech/data/wav.scp \
+--config conf/fast_decode_asr.yaml \
+--output_dir output/fast_librispeech \
+--ngpu 1
+```
 
 #### 5.4 ESPnet Model Zoo
 You can get more information for pre-trained models in [ESPnet model zoo](https://github.com/espnet/espnet_model_zoo)
