@@ -16,9 +16,25 @@ We recommend you to use virtual environment created by [conda](https://docs.cond
 
 ```conda activate ESPnet```
 
-If you have GPUs, install the GPU version of PyTorch. Otherwise, install the CPU version of PyTorch as follows.
+---
+
+Install pytorch according to your GPU version (or cpu).
+
+Detail [Here](https://pytorch.org/get-started/locally/)
+
+**CPU**
 
 ```(ESPnet) conda install pytorch torchvision cpuonly -c pytorch```
+
+**CUDA 10.2**
+
+```(ESPnet) conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch```
+
+**CUDA 11.3**
+
+```(ESPnet) conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch```
+
+---
 
 Then, install ESPnet.
 
