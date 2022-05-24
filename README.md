@@ -18,7 +18,7 @@ We recommend you to use virtual environment created by [conda](https://docs.cond
 
 ---
 
-Install pytorch according to your GPU version (or cpu).
+Install pytorch according to your **GPU** version (or **CPU**).
 
 Detail [Here](https://pytorch.org/get-started/locally/)
 
