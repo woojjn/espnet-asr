@@ -3,6 +3,7 @@ import argparse
 import logging
 from pathlib import Path
 import sys
+import warnings
 from typing import Optional
 from typing import Sequence
 from typing import Tuple
@@ -34,6 +35,7 @@ from espnet2.utils.types import str2triple_str
 from espnet2.utils.types import str_or_none
 from espnet_model_zoo.downloader import ModelDownloader
 
+warnings.filterwarnings("ignore")
 class Speech2Text:
     """Speech2Text class
 
