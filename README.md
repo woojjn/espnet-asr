@@ -98,7 +98,7 @@ You can evaluate KsponSpeech samples by running the following commands.
 python3 bin/asr_inference.py \
 --mdl mdl/ksponspeech.zip \
 --wav_scp evalset/ksponspeech/data/wav.scp \
---config conf/decode_asr_ksponspeech.yaml \
+--config conf/decode_asr.yaml \
 --output_dir output/ksponspeech \
 --ngpu 1 
 ```
