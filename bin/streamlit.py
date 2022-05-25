@@ -65,29 +65,6 @@ def main():
         st.write(result[0][0])
         st.write(result[0][1])
 
-    # FILE_NAME = "/opt/ml/input/result.txt"
-
-    # with open(FILE_NAME, "a") as f:
-    #     f.write(f"ASR_TRAIN_CONFIG: {ASR_TRAIN_CONFIG}\nASR_MODEL_FILE: {ASR_MODEL_FILE}\nCONFIG_FILE: {CONFIG_FILE}\n")
-
-
-    # audio_path = "/opt/ml/input/chunks"
-    # # audio_file = "/opt/ml/input/espnet-asr/evalset/ksponspeech/wavs/KsponSpeech_E00001.wav"
-
-    # for file_name in tqdm(sorted(os.listdir(audio_path))):
-    #     audio_file = os.path.join(audio_path, file_name)
-    #     audio, rate = downsampling(audio_file, sampling_rate=16000)
-    #     duration = len(audio)/rate
-
-    #     result = speech2text(audio)
-
-    #     with open(FILE_NAME, "a") as f:
-    #         f.write(result[0][0] + "\n")
-    # end_time = time.time()
-
-    # with open(FILE_NAME, "a") as f:
-        # f.write(f"Total time: {end_time - start_time}\n\n\n")
-
         print(f"Total time: {time.time() - start_time}")
         print("JOB DONE!!!")
 
