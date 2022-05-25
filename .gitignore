@@ -2,4 +2,5 @@ mdl
 *.sh
 .cache
 output
+download
 __pycache__
